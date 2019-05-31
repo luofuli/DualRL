@@ -1,4 +1,4 @@
-# DualLanST
+# DualRL
 A Dual Reinforcement Learning Framework for Unsupervised Text Style Transfer
 
 #### Reproducibility
