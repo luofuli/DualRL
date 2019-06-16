@@ -1,5 +1,9 @@
 # DualRL
 [A Dual Reinforcement Learning Framework for Unsupervised Text Style Transfer](https://export.arxiv.org/pdf/1905.10060)
+<p align="center"><img src="image/poster.png"></p>
+
+<br>
+
 ## Reproducibility
 - Generated results of all baselines and our model are in the `outputs` directory.
 - Human references are in the `references` directory. We also release the three more references we collected on the yelp test dataset, namely `reference[1,2,3].0`(the transferred references of negative sentences) and `reference[0,1,2,3].1` (the transferred references of positive sentences). The `reference0.0` and `reference0.1` are collected by [Li et al., 2018](https://github.com/shentianxiao/language-style-transfer). We **strongly recommend** that you use the released multi-references because it has a stronger correlation with human evaluation results.
