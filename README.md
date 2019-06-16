@@ -12,7 +12,7 @@ The yelp dataset is in the `data/yelp` directory. It consists of:
 
 ### [GYAFC](https://github.com/raosudha89/GYAFC-corpus): informal (0) <--> formal (1)
 
-Since the GYAFC dataset is only free of charge for research purposes, we only publish a subset of the test dataset in the family and relationships domain and the corresponding outputs of each system (including our model and all baselines). If you want to download the train and validation dataset, please follow the guidance at [https://github.com/raosudha89/GYAFC-corpus](https://github.com/raosudha89/GYAFC-corpus). And then, name the corpora of two styles as yelp dataset.
+Since the GYAFC dataset is only free of charge for research purposes, we only publish a subset of the test dataset in the family and relationships domain and the corresponding outputs of each system (including our model and all baselines). If you want to download the train and validation dataset, please follow the guidance at [https://github.com/raosudha89/GYAFC-corpus](https://github.com/raosudha89/GYAFC-corpus). And then, name the corpora of two styles as the yelp dataset.
 
 
 ## Quick Start
