@@ -66,7 +66,12 @@ If you have parallel or paired data, here are the processes you might go through
 4. Run step 1-3 in the section of Quick Start and specify the path to your new dataset
 
 ## Dependencies
-Python 2.7, TensorFlow 1.3.0
+```
+python==2.7
+numpy==1.14.2
+tensorflow==1.13.1
+OpenNMT_tf==1.15.0
+```
 
 ## Cite
 
