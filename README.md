@@ -28,10 +28,10 @@ python textcnn.py --mode train
 ```
 
 ### Step 2: Pre-train two seq2seq (nmt) models using pseudo-parallel data
-#### Prepare pseudo-parallel data 
+#### 2.1 Prepare pseudo-parallel data 
 To generate pseudo-parallel data, we follow the [template-based method](https://github.com/shentianxiao/language-style-transfer) proposed by [Li et al., 2018](https://aclweb.org/anthology/N18-1169). And we have provided the pseudo-parallel data of the yelp dataset in the `data/yelp/tsf_template` directory. However, if you want to generate the pseudo-parallel data using templates, you can follow [this link](https://github.com/lijuncen/Sentiment-and-Style-Transfer/issues/6) or design your own templates which are suitable for your task and dataset.
 
-#### Pre-train two seq2seq (nmt) models 
+#### 2.2 Pre-train two seq2seq (nmt) models 
 The default encoder and decoder are **bilstm**.
 ```
 cd nmt
