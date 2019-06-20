@@ -49,6 +49,7 @@ python nmt.py --mode train --nmt_direction 1-0 --n_epoch 5 --n_layer 6 --encoder
 ```
 python dual_training.py --n_epoch 10
 ```
+The final transffered results are in the `../tmp/output/${dataset}_final/` dir.
 
 ## Extend to other tasks and datasets
 If you don't have parallel or paired data, here are the processes you might go through:
