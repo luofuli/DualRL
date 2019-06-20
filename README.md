@@ -6,7 +6,7 @@
 - **References**: Human references are in the `references/` directory. We also release the three more references we collected on the yelp test dataset, namely `reference[1,2,3].0`(the transferred references of negative sentences) and `reference[0,1,2,3].1` (the transferred references of positive sentences). The `reference0.0` and `reference0.1` are collected by [Li et al., 2018](https://github.com/shentianxiao/language-style-transfer). We **strongly recommend** that you use the released multi-references dataset because it has a stronger correlation with human evaluation results.
 
 ## Dataset
-### [Yelp](https://www.yelp.com/dataset/challenge): negative (0) <--> positive (1)
+### [yelp](https://www.yelp.com/dataset/challenge): negative (0) <--> positive (1)
 - **Original dataset**:
 The original yelp dataset is in the `data/yelp` directory, where `x.0` denotes the negative `x` type of data and `x.1` denotes the positive `x` type of data. `x` is in `[train, dev, test]`.
 - **Pseudo-parallel data:**
