@@ -6,8 +6,11 @@ base_path = os.getcwd()  # current working directory
 base_path_ = base_path.split('/')
 base_path = '/'.join(base_path_[:base_path_.index('DualRL') + 1])
 
-dataset = "yelp"
-# dataset = 'GYAFC'
+if os.environ.get('DATASET') is not None:
+    dataset = os.environ.get('DATASET')
+else:
+    dataset = "yelp"
+    # dataset = 'GYAFC'
 
 
 def add_common_arguments(parser):
