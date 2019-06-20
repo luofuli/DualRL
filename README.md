@@ -17,8 +17,12 @@ Since the GYAFC dataset is only free of charge for research purposes, we only pu
 
 
 ## Quick Start
-First of all, you should specify the dataset at 9-10 line in the `common_options.py`.
-Then, run the following commands.
+First of all, you should specify the dataset.
+For example, for yelp dataset:
+```
+export DATASET=yelp
+```
+If you want to use your own datasets, please follow the guidance of next section * [Extend to other tasks and datasets](#Extend to other tasks and datasets).
 
 ### Step 1: Pre-train classifier
 ```
