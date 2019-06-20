@@ -22,7 +22,7 @@ For example, for yelp dataset:
 ```
 export DATASET=yelp
 ```
-If you want to use your own datasets, please follow the guidance of next section * [Extend to other tasks and datasets](#extend-to-other-tasks-and-datasets).
+If you want to use your own datasets, please follow the guidance of next section [Extend to other tasks and datasets](#extend-to-other-tasks-and-datasets).
 
 ### Step 1: Pre-train classifier
 ```
