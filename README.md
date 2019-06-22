@@ -78,7 +78,7 @@ python [dual_training.py | nmt.py | textcnn.py] --help
 python==2.7
 numpy==1.14.2
 tensorflow==1.13.1
-OpenNMT_tf==1.15.0
+OpenNMT-tf==1.15.0
 ```
 
 ## Cite
