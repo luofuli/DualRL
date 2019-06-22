@@ -22,8 +22,6 @@ numpy==1.14.2
 tensorflow==1.13.1
 OpenNMT-tf==1.15.0 
 ```
-**Note:** If you get the error `no module named opennmt`, please install `OpenNMT-tf`: `pip install OpenNMT-tf==1.15.0`.
-
 ## Quick Start
 First of all, you should specify the dataset.
 For example, for yelp dataset:
@@ -37,6 +35,7 @@ If you want to use your own datasets, please follow the guidance of next section
 cd classifier
 python textcnn.py --mode train
 ```
+**Note:** If you get the error `no module named opennmt`, please install `OpenNMT-tf`: `pip install OpenNMT-tf==1.15.0`.
 
 ### Step 2: Pre-train two seq2seq (nmt) models using pseudo-parallel data
 #### 2.1 Prepare pseudo-parallel data 
