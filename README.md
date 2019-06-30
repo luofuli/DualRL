@@ -52,8 +52,8 @@ python nmt.py --mode train --nmt_direction 1-0 --n_epoch 5  # Pre-train backward
 If you want to adopt **transformer** as encoder and decoder, run the following code:
 ```
 cd nmt
-python nmt.py --mode train --nmt_direction 1-0 --n_epoch 5 --encoder_decoder_type transformer --n_layer 6
-python nmt.py --mode train --nmt_direction 1-0 --n_epoch 5 --encoder_decoder_type transformer --n_layer 6 
+python nmt.py --mode train --nmt_direction 0-1 --n_epoch 5 --n_layer 6 --encoder_decoder_type transformer
+python nmt.py --mode train --nmt_direction 1-0 --n_epoch 5 --n_layer 6 --encoder_decoder_type transformer 
 ```
 
 ### Step 3: Dual reinforcement learning
