@@ -1,4 +1,4 @@
-# [DualRL](https://export.arxiv.org/pdf/1905.10060)
+# [DualRL](https://export.arxiv.org/pdf/1905.10060)：A Dual Reinforcement Learning Framework for Unsupervised Text Style Transfer
 <p align="center"><img src="fig/poster.png"></p>
 
 ## Reproducibility
