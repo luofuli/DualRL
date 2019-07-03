@@ -72,7 +72,7 @@ If you don't have parallel or paired data, here are the processes you might go t
 If you have parallel or paired data, here are the processes you might go through:
 1. Prepare two parallel corpora, one sentence per line
 2. Divide the dataset into train/dev/test
-3. Copy the dataset generated in the second step as the "pseudo-parallel" corpus
+3. Copy the dataset generated in the second step as the "pseudo-parallel" corpus to `data/yelp/tsf_template`
 4. Run step 1-3 in the section of Quick Start and specify the path to your new dataset or rename them like files in `data/yelp/` and `references/yelp/`.
 
 *You can run the following code to see which parameters need to be set*
