@@ -16,7 +16,7 @@ def add_nmt_arguments(parser):
     parser.add_argument("--nmt_direction", default="1-0", help="Translation direction(`0-1 or 1-0`.)")
     parser.add_argument("--n_epoch", default=5, type=int, help="Max n epoch during training.")
     parser.add_argument("--batch_size", default=32, type=int, help="Batch size of training.")
-    parser.add_argument("--maximum_iterations", default=40, type=int, help="Maximum decoding iterations (default: 40).")
+    parser.add_argument("--maximum_iterations", default=100, type=int, help="Maximum decoding iterations (default: 100).")
     parser.add_argument("--initializer", default="uniform_unit_scaling", help="Initializer for model.")
     parser.add_argument("--learning_rate", default=0.001, type=float, help="Learning rate")
 
