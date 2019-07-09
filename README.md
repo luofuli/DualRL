@@ -67,13 +67,13 @@ If you don't have parallel or paired data, here are the processes you might go t
 1. Prepare two unaligned (unpaired) corpora, one sentence per line
 2. Divide the dataset into train/dev/test
 3. Prepare pseudo-parallel corpus, you can use [Li's](https://github.com/lijuncen/Sentiment-and-Style-Transfer/issues/6) method, or your own designed heuristic rules/templates
-4. Run step 1-3 in the section of Quick Start and specify the path to your new dataset or rename them like files in `data/yelp/` and `references/yelp/`.
+4. Run step 1-3 in the section of [Quick Start](#quick-start) and specify the path to your new dataset or rename them like files in `data/yelp/` and `references/yelp/`.
 
 If you have parallel or paired data, here are the processes you might go through:
 1. Prepare two parallel corpora, one sentence per line
 2. Divide the dataset into train/dev/test
 3. Copy the dataset generated in the second step as the "pseudo-parallel" corpus to `data/yelp/tsf_template`
-4. Run step 1-3 in the section of Quick Start and specify the path to your new dataset or rename them like files in `data/yelp/` and `references/yelp/`.
+4. Run step 1-3 in the section of [Quick Start](#quick-start) and specify the path to your new dataset or rename them like files in `data/yelp/` and `references/yelp/`.
 
 *You can run the following code to see which parameters need to be set*
 ```
