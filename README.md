@@ -80,6 +80,11 @@ If you have parallel or paired data, here are the processes you might go through
 python [dual_training.py | nmt.py | textcnn.py] --help
 ```
 
+### FAQ
+1. [Can I use the original sentence to pre-train the two seq2seq models?](https://github.com/luofuli/DualRL/issues/4)
+
+For some tasks, [Li's](https://github.com/lijuncen/Sentiment-and-Style-Transfer/issues/6) method can't be used to generate pseudo-parallel data. You can refer to [this issue](https://github.com/luofuli/DualRL/issues/4) to generate pseudo-parallel data via simply add some noise to the original sentence.
+
 ## Cite
 
 If you use this code, please cite the following paper:
