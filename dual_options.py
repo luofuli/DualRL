@@ -17,7 +17,7 @@ def add_dual_arguments(parser):
 
     # Arguments for calculating reward
     parser.add_argument("--use_baseline", type=ast.literal_eval, default=True,
-                        help="Use baseline in reward calculation input should be either 'True' or 'False'.")
+                        help="Use baseline in reward calculation, input should be either 'True' or 'False'.")
     parser.add_argument("--normalize_reward", type=ast.literal_eval, default=False,   # important !!
                         help="normalize reward or not, input should be either 'True' or 'False'.")
 
