@@ -1,5 +1,6 @@
 from nmt.options import *
 from common_options import *
+import ast
 
 
 def add_dual_arguments(parser):
@@ -15,8 +16,10 @@ def add_dual_arguments(parser):
     parser.add_argument("--eval_step", default=100, type=int, help="Evaluate model.")
 
     # Arguments for calculating reward
-    parser.add_argument("--use_baseline", default=True, help="Use baseline in reward calculation of policy gradient.")
-    parser.add_argument("--normalize_reward", default=False, help="normalize reward or not.")  # important !!
+    parser.add_argument("--use_baseline", type=ast.literal_eval, default=True,
+                        help="Use baseline in reward calculation input should be either 'True' or 'False'.")
+    parser.add_argument("--normalize_reward", type=ast.literal_eval, default=False,   # important !!
+                        help="normalize reward or not, input should be either 'True' or 'False'.")
 
     # Arguments for anneal teacher-forcing (MLE)
     parser.add_argument("--MLE_anneal", action='store_true', help="Anneal the use of pseudo data via MLE")
