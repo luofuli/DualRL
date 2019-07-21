@@ -111,4 +111,6 @@ def load_args_from_yaml(dir):
 
 
 def dump_args_to_yaml(args, dir):
+    if not os.path.exists(dir):
+        os.makedirs(dir)
     dump(args, open(os.path.join(dir, 'conf.yaml'), 'w'))
