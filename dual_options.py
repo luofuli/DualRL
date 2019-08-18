@@ -22,6 +22,8 @@ def add_dual_arguments(parser):
                         help="normalize reward or not, input should be either 'True' or 'False'.")
 
     # Arguments for anneal teacher-forcing (MLE)
+    parser.add_argument("--teacher_forcing", nargs='+', default=["back_trans"],
+                        help="Corpus used in teacher forcing (MLE), must in [`pseudo`, `back_trans`")
     parser.add_argument("--MLE_anneal", action='store_true', help="Anneal the use of pseudo data via MLE")
     parser.add_argument("--anneal_rate", default=1.1, type=float, help="The decay rate.")
     parser.add_argument("--anneal_steps", default=1000, type=int, help="Increase gap")
