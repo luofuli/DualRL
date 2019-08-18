@@ -34,9 +34,10 @@ def change_direction(A, B):
 def main():
     # === Load arguments
     args = load_dual_arguments()
+    dump_args_to_yaml(args, args.final_model_save_dir)
+
     cls_args = load_args_from_yaml(args.cls_model_save_dir)
     nmt_args = load_args_from_yaml(os.path.join(args.nmt_model_save_dir, '0-1'))
-    nmt_args.nmt_model_save_dir = args.nmt_model_save_dir
     nmt_args.learning_rate = args.learning_rate  # a smaller learning rate for RL
     min_seq_len = min(int(max(re.findall("\d", cls_args.filter_sizes))), args.min_seq_len)
 
@@ -305,16 +306,33 @@ def main():
                                                                           global_step / args.anneal_steps)))
                 else:
                     gap = args.anneal_initial_gap
+
                 if n_batch % gap == 0:
-                    data = sess.run(paired_train_data_next[A])  # get real data!!
-                    feed_dict = {
-                        nmts_train[A].input_ids: data["ids"],
-                        nmts_train[A].input_length: data["length"],
-                        nmts_train[A].target_ids_in: data["trans_ids_in"],
-                        nmts_train[A].target_ids_out: data["trans_ids_out"],
-                        nmts_train[A].target_length: data["trans_length"],
-                    }
-                    nmtA_pseudo_loss_, _ = sess.run([nmts_train[A].loss, nmts_train[A].train_op], feed_dict=feed_dict)
+                    # Update nmtA using original pseudo data (used as pre-training)
+                    # This is not a ideal way since the quality of the pseudo-parallel data is not acceptable for
+                    # the later iterations of training.
+                    # We highly recommend you adopt back translation to generate the pseudo-parallel data on-the-fly
+                    if "pseudo" in args.teacher_forcing:
+                        data = sess.run(paired_train_data_next[A])  # get real data!!
+                        feed_dict = {
+                            nmts_train[A].input_ids: data["ids"],
+                            nmts_train[A].input_length: data["length"],
+                            nmts_train[A].target_ids_in: data["trans_ids_in"],
+                            nmts_train[A].target_ids_out: data["trans_ids_out"],
+                            nmts_train[A].target_length: data["trans_length"],
+                        }
+                        nmtA_pse_loss_, _ = sess.run([nmts_train[A].loss, nmts_train[A].train_op], feed_dict=feed_dict)
+
+                    # Update nmtB using pseudo data generated via back_translation (on-the-fly)
+                    if "back_trans" in args.teacher_forcing:
+                        feed_dict = {
+                            nmts_train[B].input_ids: mid_ids_bs,
+                            nmts_train[B].input_length: mid_ids_length_bs,
+                            nmts_train[B].target_ids_in: src["ids_in"],
+                            nmts_train[B].target_ids_out: src["ids_out"],
+                            nmts_train[B].target_length: src["length"],
+                        }
+                        nmtB_loss_, _ = sess.run([nmts_train[B].loss, nmts_train[B].train_op], feed_dict=feed_dict)
 
             except tf.errors.OutOfRangeError as e:  # next epoch
                 print("===== DualTrain: Total N batch:{}\tCost time:{} =====".format(n_batch, time.time() - t0))
