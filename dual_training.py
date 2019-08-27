@@ -23,14 +23,6 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 safe_divide_constant = 1e-6
 bleu_evaluator = BLEUEvaluator()
 
-
-def change_direction(A, B):
-    C = A
-    A = B
-    B = C
-    return A, B
-
-
 def main():
     # === Load arguments
     args = load_dual_arguments()
@@ -182,8 +174,7 @@ def main():
                 nmts_train[B].saver.save(sess, final_model_save_paths[B], global_step=global_step)
 
             if n_batch % args.change_per_step == 0:
-                A = 1 - A
-                B = 1 - B
+                A, B = B, A
                 print("============= Change to train model {}-{} at {} steps ==============".format(A, B, global_step))
 
             try:
