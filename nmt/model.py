@@ -112,8 +112,7 @@ class NMT(object):
                     output_layer=output_layer)
             else:
                 batch_size = tf.shape(encoder_sequence_length)[0]
-                maximum_
-                tions = self.params.get("maximum_iterations", 100)
+                maximum_iterations = self.params.get("maximum_iterations", 100)
                 start_tokens = tf.fill([batch_size], constants.START_OF_SENTENCE_ID)
                 end_token = constants.END_OF_SENTENCE_ID
 
